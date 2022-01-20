@@ -14,22 +14,22 @@ A custom action for dependency package scanning using Blackduck for SCA.
   Optional 
   Default: 4
 ### `DETECT_SOURCE_PATH`
-  Optional
+  Optional \
   Default: '.' 
 ### `DETECT_PROJECT_VERSION_DISTR`
-  Optional - EXTERNAL,INTERNAL,OPENSOURCE,SAAS
+  Optional - EXTERNAL,INTERNAL,OPENSOURCE,SAAS \
   Default: SAAS
 ### `DETECT_LOGGING_LEVEL`
-  Optional - OFF,ERROR,WARN,INFO,DEBUG,TRACE
+  Optional - OFF,ERROR,WARN,INFO,DEBUG,TRACE \
   Default: INFO
 ### `DETECT_TIMEOUT`
-  Optional
+  Optional \
   Default: 300 (seconds)
 ### `DETECT_POLICY_CHECK_FAIL_ON_SEVERITIES`
-  Optional - ALL,NONE,BLOCKER,CRITICAL,MAJOR,MINOR,TRIVIAL,UNSPECIFIED
+  Optional - ALL,NONE,BLOCKER,CRITICAL,MAJOR,MINOR,TRIVIAL,UNSPECIFIED \
   Default: ALL
 ### `ADDITIONAL_OPTS`
-  Optional
+  Optional \
   Default: ' '                         
 
 ## Usage 
