@@ -1,0 +1,66 @@
+name: 'Blackduck dependency scan'
+description: "SCA Blackduck dependency scan for 64 bit Linux runners"
+inputs:
+  BLACKDUCK_URL:
+    description: "Blackduck server URL"
+    required: true
+  BLACKDUCK_API_TOKEN:
+    description: "Blackduck server access token"
+    required: true
+  BLACKDUCK_PROJECT_NAME:
+    required: true
+    description: "Blackduck project for scan results"
+  BLACKDUCK_PROJECT_VERSION:
+    required: true
+    description: "Blackduck project branch for scan results"
+  DETECTOR_SEARCH_DEPTH:
+    required: false
+    description: Detector search depth
+    default: '4'
+  DETECT_SOURCE_PATH:
+    required: false
+    description: Detect source path
+    default: '.'
+  DETECT_PROJECT_VERSION_DISTR:
+    required: false
+    description: Detect project version distribution
+    default: 'SAAS'    
+  DETECT_LOGGING_LEVEL:
+    required: false
+    description: Logging level for detect script
+    default: "INFO"
+  DETECT_TIMEOUT:
+    required: false
+    description: Detect timeout
+    default: "300" 
+  DETECT_POLICY_CHECK_FAIL_ON_SEVERITIES:
+    required: false
+    description: Detect policy check fail on severities
+    default: "ALL"
+  ADDITIONAL_OPTS:
+    required: false
+    description: "Additional command line options"
+    default: " "       
+runs:
+  using: "composite"
+  steps:
+    - name: Blackduck scan
+      run: |
+            set -e -x
+            wget https://detect.synopsys.com/detect7.sh -o detect.sh
+            chmod +x detect.sh
+            ./detect.sh \
+            --blackduck.url="${{ inputs.BLACKDUCK_URL }}" \
+            --blackduck.api.token="${{ inputs.BLACKDUCK_API_TOKEN }}" \
+            --detect.project.name="${{ inputs.BLACKDUCK_PROJECT_NAME }}" \
+            --detect.project.version.name="${{inputs.BLACKDUCK_PROJECT_VERSION}}" \
+            --detect.source.path=${{inputs.DETECT_SOURCE_PATH}} \
+            --detect.project.version.distribution=${{inputs.DETECT_PROJECT_VERSION_DISTR}} \
+            --detect.detector.search.depth=${{inputs.DETECTOR_SEARCH_DEPTH}} \
+            --logging.level.detect=${{inputs.DETECT_LOGGING_LEVEL}} \
+            --detect.timeout=${{inputs.DETECT_TIMEOUT}} \
+            --detect.policy.check.fail.on.severities=${{inputs.DETECT_POLICY_CHECK_FAIL_ON_SEVERITIES}} ${{inputs.ADDITIONAL_OPTS}}
+      shell: bash
+    
+
+    
