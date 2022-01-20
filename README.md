@@ -53,6 +53,7 @@ uses: sukot1/blackduck-pkgscanner@v0.01
     BLACKDUCK_PROJECT_NAME: <<your_project_name>>
     BLACKDUCK_PROJECT_VERSION: <<your_project_version>>
     DETECT_POLICY_CHECK_FAIL_ON_SEVERITIES: 'BLOCKER'
+    ADDITIONAL_OPTS: '--detect.detector.buildless=false --detect.blackduck.scan.mode=INTELLIGENT'
 ```
 
 > Please refer to Synopsys official [documentation](https://community.synopsys.com/s/document-item?bundleId=integrations-detect&topicId=properties%2Fall-properties.html&_LANG=enus) for a full list of configurable Detect properties for package scanning.
