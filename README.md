@@ -1,5 +1,5 @@
 # blackduck-pkgscanner
-A custom action for dependency package scanning using Blackduck for SCA.
+A custom action for dependency package scanning using Black Duck for SCA.
 
 ## Inputs
 ### `BLACKDUCK_URL`

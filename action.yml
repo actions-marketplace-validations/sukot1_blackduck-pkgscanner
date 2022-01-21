@@ -1,18 +1,18 @@
-name: 'Blackduck dependency scan'
-description: "SCA Blackduck dependency scan for 64 bit Linux runners"
+name: 'Black Duck dependency package scan'
+description: "SCA Black Duck dependency scan for 64 bit Linux runners"
 inputs:
   BLACKDUCK_URL:
-    description: "Blackduck server URL"
+    description: "Black Duck server URL"
     required: true
   BLACKDUCK_API_TOKEN:
-    description: "Blackduck server access token"
+    description: "Black Duck server access token"
     required: true
   BLACKDUCK_PROJECT_NAME:
     required: true
-    description: "Blackduck project for scan results"
+    description: "Black Duck project for scan results"
   BLACKDUCK_PROJECT_VERSION:
     required: true
-    description: "Blackduck project branch for scan results"
+    description: "Black Duck project branch for scan results"
   DETECTOR_SEARCH_DEPTH:
     required: false
     description: Detector search depth
