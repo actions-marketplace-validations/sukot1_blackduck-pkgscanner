@@ -47,9 +47,9 @@ runs:
     - name: Blackduck scan
       run: |
             set -e -x
-            wget https://detect.synopsys.com/detect7.sh -o detect.sh
-            chmod +x detect.sh
-            ./detect.sh \
+            wget https://detect.synopsys.com/detect7.sh
+            chmod +x detect7.sh
+            ./detect7.sh \
             --blackduck.url="${{ inputs.BLACKDUCK_URL }}" \
             --blackduck.api.token="${{ inputs.BLACKDUCK_API_TOKEN }}" \
             --detect.project.name="${{ inputs.BLACKDUCK_PROJECT_NAME }}" \
