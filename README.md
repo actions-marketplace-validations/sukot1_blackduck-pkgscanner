@@ -57,3 +57,5 @@ uses: sukot1/blackduck-pkgscanner@v0.01
 ```
 
 > Please refer to Synopsys official [documentation](https://community.synopsys.com/s/document-item?bundleId=integrations-detect&topicId=properties%2Fall-properties.html&_LANG=enus) for a full list of configurable Detect properties for package scanning.
+
+> This action has been produced as a helpful third party resource while working with Synopsys's Black Duck software and not produced/maintained by [Sysnopys](https://www.synopsys.com/).
